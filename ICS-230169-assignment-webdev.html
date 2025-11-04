@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Phan Thi Minh Ngoc | Personal Website</title>
+
+  <style>
+    /* ======== Global Styles ======== */
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f8fafc;
+      color: #333;
+      line-height: 1.6;
+    }
+    h1, h2 {
+      color: #0077b6;
+    }
+    a {
+      color: #0077b6;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* ======== Navigation Bar ======== */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: #0077b6;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 30px;
+      z-index: 1000;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+    nav .logo {
+      font-weight: bold;
+      font-size: 1.2em;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      margin: 0;
+    }
+    nav ul li {
+      display: inline;
+    }
+    nav ul li a {
+      color: white;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    nav ul li a:hover {
+      color: #caf0f8;
+    }
+
+    /* ======== Header ======== */
+    header {
+      background: linear-gradient(to right, #0077b6, #00b4d8);
+      color: white;
+      text-align: center;
+      padding: 120px 20px 80px;
+    }
+    header img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 4px solid white;
+      margin-bottom: 15px;
+    }
+
+    /* ======== Sections ======== */
+    section {
+      max-width: 900px;
+      margin: 80px auto;
+      background: white;
+      padding: 40px 30px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    section h2 {
+      border-left: 6px solid #0077b6;
+      padding-left: 10px;
+      margin-bottom: 20px;
+    }
+
+    /* ======== Portfolio Grid ======== */
+    .portfolio-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .project {
+      flex: 1 1 250px;
+      background: #e3f2fd;
+      padding: 15px;
+      border-radius: 8px;
+      transition: transform 0.2s;
+    }
+    .project:hover {
+      transform: translateY(-5px);
+    }
+
+    /* ======== Contact ======== */
+    .contact p {
+      margin: 10px 0;
+    }
+
+    /* ======== Notebook ======== */
+    .notebook {
+      margin-top: 30px;
+    }
+    textarea {
+      width: 100%;
+      height: 100px;
+      margin-bottom: 10px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      resize: none;
+      font-family: inherit;
+    }
+    button {
+      background-color: #0077b6;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 1em;
+    }
+    button:hover {
+      background-color: #023e8a;
+    }
+    .notes {
+      margin-top: 20px;
+    }
+    .note {
+      background-color: #caf0f8;
+      padding: 10px 12px;
+      border-radius: 6px;
+      margin-bottom: 10px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+
+    /* ======== Footer ======== */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #023e8a;
+      color: white;
+    }
+
+    /* ======== Responsive Design ======== */
+    @media (max-width: 700px) {
+      nav ul {
+        flex-direction: column;
+        background-color: #0077b6;
+        position: absolute;
+        top: 55px;
+        right: 0;
+        display: none;
+        padding: 10px;
+        border-radius: 0 0 10px 10px;
+      }
+      nav ul.show {
+        display: flex;
+      }
+      .menu-toggle {
+        display: block;
+        cursor: pointer;
+      }
+      .menu-toggle span {
+        background: white;
+        display: block;
+        height: 3px;
+        width: 25px;
+        margin: 5px 0;
+      }
+    }
+    @media (min-width: 701px) {
+      .menu-toggle {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- ===== Navigation ===== -->
+  <nav>
+    <div class="logo">Minh Ngoc</div>
+    <div class="menu-toggle" id="menu-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <ul id="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#portfolio">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#notebook">Notebook</a></li>
+    </ul>
+  </nav>
+
+  <!-- ===== Header ===== -->
+  <header>
+    <img src="https://via.placeholder.com/150" alt="Phan Thi Minh Ngoc">
+    <h1>Phan Thi Minh Ngoc</h1>
+    <p>Computer Science student at Fulbright University Vietnam<br>
+    Passionate about web development and data science.</p>
+  </header>
+
+  <!-- ===== About Section ===== -->
+  <section id="about">
+    <h2>About Me</h2>
+    <p>Hello! My name is <strong>Phan Thi Minh Ngoc</strong>. I’m currently studying Computer Science at Fulbright University Vietnam. I love blending creativity and logic — whether I’m coding a website, crafting a clothing design, or creating something new.</p>
+    <p>My interests include <strong>pottering</strong>, <strong>designing clothes</strong>, and <strong>cycling</strong>. These help me stay curious, creative, and balanced.</p>
+  </section>
+
+  <!-- ===== Portfolio Section ===== -->
+  <section id="portfolio">
+    <h2>Projects & Skills</h2>
+    <div class="portfolio-grid">
+      <div class="project">
+        <h3>Personal Portfolio Website</h3>
+        <p>Designed and built a responsive portfolio website using HTML, CSS, and JavaScript.</p>
+      </div>
+      <div class="project">
+        <h3>UI/UX Design Exploration</h3>
+        <p>Explored design thinking principles to improve user experience in creative projects.</p>
+      </div>
+      <div class="project">
+        <h3>Creative Coding with Python</h3>
+        <p>Developed small projects combining data and creativity through Python scripts.</p>
+      </div>
+      <div class="project">
+        <h3>Clothing Design Sketchbook</h3>
+        <p>Created fashion design sketches integrating aesthetic and functional elements.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Contact Section ===== -->
+  <section id="contact" class="contact">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:ngoc.phan.230169@student.fulbright.edu.vn">ngoc.phan.230169@student.fulbright.edu.vn</a></p>
+    <p>LinkedIn: <a href="#" target="_blank">Coming Soon</a></p>
+  </section>
+
+  <!-- ===== Notebook Section ===== -->
+  <section id="notebook" class="notebook">
+    <h2>My Notebook</h2>
+    <p>Write down your thoughts or quick notes here. Notes disappear when the page is refreshed.</p>
+    <textarea id="noteInput" placeholder="Type your note here..."></textarea>
+    <br />
+    <button id="addNoteBtn">Add Note</button>
+
+    <div class="notes" id="notesContainer"></div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer>
+    <p>© 2025 Phan Thi Minh Ngoc | Fulbright University Vietnam</p>
+  </footer>
+
+  <!-- ===== JavaScript ===== -->
+  <script>
+    // Notebook feature
+    const noteInput = document.getElementById('noteInput');
+    const addNoteBtn = document.getElementById('addNoteBtn');
+    const notesContainer = document.getElementById('notesContainer');
+
+    addNoteBtn.addEventListener('click', function() {
+      const noteText = noteInput.value.trim();
+      if (noteText === '') {
+        alert('Please write something before adding a note!');
+        return;
+      }
+      const newNote = document.createElement('div');
+      newNote.classList.add('note');
+      newNote.textContent = noteText;
+      notesContainer.appendChild(newNote);
+      noteInput.value = '';
+    });
+
+    // Mobile menu toggle
+    const menuToggle = document.getElementById('menu-toggle');
+    const navLinks = document.getElementById('nav-links');
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('show');
+    });
+  </script>
+</body>
+</html>
